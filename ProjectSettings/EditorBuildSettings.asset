@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/NarrativeHomeworkAssets/Scenes/Narrative_Level_1.unity
     guid: 4b43b97a7964c9044a2d94c16e348d8e
+  - enabled: 1
+    path: Assets/PixelQuestAssets/Scenes/LevelSelect.unity
+    guid: 4e32e10f628888c4b8921be5bbcbc4d2
   m_configObjects: {}
