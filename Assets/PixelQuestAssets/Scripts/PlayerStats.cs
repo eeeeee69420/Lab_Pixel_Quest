@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
     // Player stats 
     public float playerLife = 3;   // How much health the player currently has 
     public int currentCoins = 0;   // How many coins has the player collected 
-    private float playerMaxHealth = 3; // What is the max health the player can have 
+    private float playerMaxHealth = 6; // What is the max health the player can have 
     private int maxCoins = 0; // What is the amount of coins in the level 
 
     // Rigidbody 
@@ -25,9 +25,16 @@ public class PlayerStats : MonoBehaviour
     private const string finishTag = "Finish";
 
     // UI 
-    public Image heartImage;            // Update the Heart Image of the player 
+    public Image Heart1Image;            // Update the Heart Image of the player 
+    public Image Heart2Image;
+    public Image Heart3Image;
     public TextMeshProUGUI coinText;    // Update the text showing coins collected 
     public GameObject CoinParent;       // Parent we check to see how many coins are in the level 
+
+    public Sprite FullLife;
+    public Sprite HalfLife;
+    public Sprite EmptyLife;
+
 
     // Auido 
     public AudioSource deathSFX;  // Death sound effect 
@@ -43,6 +50,44 @@ public class PlayerStats : MonoBehaviour
         maxCoins = CoinParent.transform.childCount;
         // Updates the UI to show the proper values of the level 
         coinText.text = currentCoins + "/" + maxCoins;
+    }
+    private void Update()
+    {
+        if (playerLife >= 2){
+            Heart1Image.sprite = FullLife;
+        }
+        if (playerLife == 1)
+        {
+            Heart1Image.sprite = HalfLife;
+        }
+        if (playerLife <= 0)
+        {
+            Heart1Image.sprite = EmptyLife;
+        }
+        if (playerLife >= 4)
+        {
+            Heart2Image.sprite = FullLife;
+        }
+        if (playerLife == 3)
+        {
+            Heart2Image.sprite = HalfLife;
+        }
+        if (playerLife <= 2)
+        {
+            Heart2Image.sprite = EmptyLife;
+        }
+        if (playerLife >= 6)
+        {
+            Heart3Image.sprite = FullLife;
+        }
+        if (playerLife == 5)
+        {
+            Heart3Image.sprite = HalfLife;
+        }
+        if (playerLife <= 4)
+        {
+            Heart3Image.sprite = EmptyLife;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -73,7 +118,7 @@ public class PlayerStats : MonoBehaviour
                     // Take away players life 
                     playerLife--;
                     // Updates the UI 
-                    heartImage.fillAmount = playerLife / playerMaxHealth;
+                    //heartImage.fillAmount = playerLife / playerMaxHealth;
                     // If the player has lost all of their lives reset the level 
                     if (playerLife <= 0)
                     {
@@ -93,7 +138,6 @@ public class PlayerStats : MonoBehaviour
                         // If the player is missing health we increase their life
                         playerLife++;
                         // Update the UI to show new health 
-                        heartImage.fillAmount = playerLife / playerMaxHealth;
                         // Destroy the health object 
                         Destroy(collision.gameObject);
                     }
