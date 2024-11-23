@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
     // Player stats 
     public float playerLife = 3;   // How much health the player currently has 
     public int currentCoins = 0;   // How many coins has the player collected 
-    private float playerMaxHealth = 6; // What is the max health the player can have 
+    private float playerMaxHealth = 6   ; // What is the max health the player can have 
     private int maxCoins = 0; // What is the amount of coins in the level 
 
     // Rigidbody 
@@ -30,6 +30,7 @@ public class PlayerStats : MonoBehaviour
     public Image Heart3Image;
     public TextMeshProUGUI coinText;    // Update the text showing coins collected 
     public GameObject CoinParent;       // Parent we check to see how many coins are in the level 
+    public GameObject DeathScreen;
 
     public Sprite FullLife;
     public Sprite HalfLife;
