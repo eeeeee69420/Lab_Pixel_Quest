@@ -7,6 +7,8 @@ public class PlayerStats : MonoBehaviour
 {
     // Respawn 
     public Transform respawnPoint; // Keeps track of where the player we respawn at 
+    public Transform Screen;
+    public Transform DeathScreen;
 
     // Player stats 
     public float playerLife = 3;   // How much health the player currently has 
@@ -30,12 +32,15 @@ public class PlayerStats : MonoBehaviour
     public Image Heart3Image;
     public TextMeshProUGUI coinText;    // Update the text showing coins collected 
     public GameObject CoinParent;       // Parent we check to see how many coins are in the level 
-    public GameObject DeathScreen;
 
     public Sprite FullLife;
     public Sprite HalfLife;
     public Sprite EmptyLife;
 
+    public SpriteRenderer PlayerSprite;
+
+    public float uispeed = 500;
+    public float deathx = 0;
 
     // Auido 
     public AudioSource deathSFX;  // Death sound effect 
@@ -89,6 +94,12 @@ public class PlayerStats : MonoBehaviour
         {
             Heart3Image.sprite = EmptyLife;
         }
+
+        if (playerLife <= 0)
+        {
+            // Gets the name of the level we're currently in 
+            DeathScreen.position = Vector2.MoveTowards(DeathScreen.position, Screen.position, uispeed * Time.deltaTime);                        // Reload that level 
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -115,18 +126,15 @@ public class PlayerStats : MonoBehaviour
                     // Make the speed zero 
                     rigidbody2D.velocity = Vector2.zero;
                     // Moves the player to the respawn point 
-                    transform.position = respawnPoint.position;
                     // Take away players life 
                     playerLife--;
                     // Updates the UI 
                     //heartImage.fillAmount = playerLife / playerMaxHealth;
                     // If the player has lost all of their lives reset the level 
+                    transform.position = respawnPoint.position;
                     if (playerLife <= 0)
                     {
-                        // Gets the name of the level we're currently in 
-                        string currentLevel = SceneManager.GetActiveScene().name;
-                        // Reload that level 
-                        SceneManager.LoadScene(currentLevel);
+                        PlayerSprite.enabled = false;
                     }
                     break;
                 }

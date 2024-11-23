@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -126,19 +126,124 @@ TextureImporter:
       name: greenSheet_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 512
-        height: 256
+        x: 290
+        y: 117
+        width: 49
+        height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 4, z: 6, w: 4}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: ca5232fd7f227da45833403875b36186
       internalID: -1230426091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greenSheet_1
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 72
+        width: 48
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 5, z: 6, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 142e1534b45b7c441b75c7a4caeeeeb4
+      internalID: 1259272031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greenSheet_2
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 113
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 6, y: 9, z: 6, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d54c771b61092948a5e01c698a30439
+      internalID: 150560326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greenSheet_3
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 13
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 6, y: 9, z: 6, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e326850b6b341d49890d3a7f6549ad0
+      internalID: 1399150557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greenSheet_4
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 17
+        width: 49
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 6, y: 4, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c71e503279175645998f592e67c8b43
+      internalID: 1092820058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greenSheet_5
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 13
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 4, y: 8, z: 4, w: 4}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cabce51f9e1d0d45a3be7bfbaa650de
+      internalID: -1816044365
       vertices: []
       indices: 
       edges: []
@@ -155,6 +260,11 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       greenSheet_0: -1230426091
+      greenSheet_1: 1259272031
+      greenSheet_2: 150560326
+      greenSheet_3: 1399150557
+      greenSheet_4: 1092820058
+      greenSheet_5: -1816044365
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
