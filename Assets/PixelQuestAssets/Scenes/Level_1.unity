@@ -724,7 +724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7175829173655473715, guid: d0f10c407a5290d4daf4320a47f4bb2a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 550
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 7214991412672148644, guid: d0f10c407a5290d4daf4320a47f4bb2a, type: 3}
       propertyPath: m_Name
@@ -1230,7 +1230,7 @@ Transform:
   m_GameObject: {fileID: 639174301}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6078655, y: 0.27906823, z: -0.040822983}
+  m_LocalPosition: {x: 0.91264, y: 0.25887823, z: -0.040822983}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4316,74 +4316,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1731715253
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1731715256}
-  - component: {fileID: 1731715255}
-  - component: {fileID: 1731715254}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1731715254
+--- !u!114 &1864507900 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3117426988480730034, guid: b855e4446e35b4d47978fa60cd14f465, type: 3}
+  m_PrefabInstance: {fileID: 6568564607860947559}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731715253}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: d6a686179266753429333bf71684f5eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &1731715255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731715253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &1731715256
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731715253}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1976589161
 GameObject:
   m_ObjectHideFlags: 0
@@ -5055,6 +4998,14 @@ PrefabInstance:
       propertyPath: respawnPoint
       value: 
       objectReference: {fileID: 654730393}
+    - target: {fileID: 3969261363486648858, guid: b855e4446e35b4d47978fa60cd14f465, type: 3}
+      propertyPath: WalkSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3969261363486648858, guid: b855e4446e35b4d47978fa60cd14f465, type: 3}
+      propertyPath: playerStats
+      value: 
+      objectReference: {fileID: 1864507900}
     - target: {fileID: 6891327636153812269, guid: b855e4446e35b4d47978fa60cd14f465, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5199,4 +5150,3 @@ SceneRoots:
   - {fileID: 174267430}
   - {fileID: 140354708}
   - {fileID: 1664447234}
-  - {fileID: 1731715256}

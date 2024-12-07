@@ -16,6 +16,10 @@ public class PlayerStats : MonoBehaviour
     private float playerMaxHealth = 6   ; // What is the max health the player can have 
     private int maxCoins = 0; // What is the amount of coins in the level 
 
+    PQPlayerMovement playerMovement;
+    PlayerJumping playerJumping;
+
+
     // Rigidbody 
     private Rigidbody2D rigidbody2D; // Controls player speed 
 
@@ -135,6 +139,7 @@ public class PlayerStats : MonoBehaviour
                     if (playerLife <= 0)
                     {
                         PlayerSprite.enabled = false;
+                        rigidbody2D.velocity = Vector2.zero;
                     }
                     break;
                 }
