@@ -13,14 +13,13 @@ public class PlayerStats : MonoBehaviour
     public Transform DeathScreen;
     public Transform FinishScreen;
     public Transform DoorPoint;
-    public Sprite DoorMain;
 
     // Player stats 
     public float playerLife = 3;   // How much health the player currently has 
     public int currentCoins = 0;   // How many coins has the player collected 
     private float playerMaxHealth = 6   ; // What is the max health the player can have 
     private int maxCoins = 0; // What is the amount of coins in the level 
-    public Boolean finish = false;
+    public bool finish = false;
 
     PQPlayerMovement playerMovement;
     PlayerJumping playerJumping;
@@ -58,6 +57,7 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
+        playerMovement = GetComponent<PQPlayerMovement>();
         // Connect to the rigidbody 
         rigidbody2D = GetComponent<Rigidbody2D>();
         // Looks at the Coin Parent Game Object and check how many children it has, thats' the number
@@ -112,9 +112,8 @@ public class PlayerStats : MonoBehaviour
         }
         if (finish == true)
         {
-            rigidbody2D.velocity = Vector2.zero;
             FinishScreen.position = Vector2.MoveTowards(FinishScreen.position, Screen.position, uispeed * Time.deltaTime);
-            rigidbody2D.position = Vector2.MoveTowards(rigidbody2D.position, DoorPoint.position, uispeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, DoorPoint.position, Time.deltaTime);
         }
     }
 
@@ -181,6 +180,8 @@ public class PlayerStats : MonoBehaviour
             case finishTag:
                 {
                     finish = true;
+                    rigidbody2D.velocity = Vector2.zero;
+                    rigidbody2D.gravityScale = 0;
                     break;
                 }
         }

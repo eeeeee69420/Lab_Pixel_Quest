@@ -147,9 +147,9 @@ TextureImporter:
       name: greenSheet_1
       rect:
         serializedVersion: 2
-        x: 291
+        x: 290
         y: 72
-        width: 48
+        width: 49
         height: 45
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -173,7 +173,7 @@ TextureImporter:
         width: 49
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 6, y: 9, z: 6, w: 4}
       outline: []
       physicsShape: []
@@ -194,7 +194,7 @@ TextureImporter:
         width: 49
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 6, y: 9, z: 6, w: 4}
       outline: []
       physicsShape: []
@@ -215,7 +215,7 @@ TextureImporter:
         width: 49
         height: 45
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 6, y: 4, z: 4, w: 4}
       outline: []
       physicsShape: []
@@ -236,7 +236,7 @@ TextureImporter:
         width: 49
         height: 49
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 4, y: 8, z: 4, w: 4}
       outline: []
       physicsShape: []
@@ -244,6 +244,27 @@ TextureImporter:
       bones: []
       spriteID: 6cabce51f9e1d0d45a3be7bfbaa650de
       internalID: -1816044365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: greenSheet_6
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 117
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83612b493e02c3548801cccc33caf6de
+      internalID: -1769279944
       vertices: []
       indices: 
       edges: []
@@ -265,6 +286,7 @@ TextureImporter:
       greenSheet_3: 1399150557
       greenSheet_4: 1092820058
       greenSheet_5: -1816044365
+      greenSheet_6: -1769279944
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
