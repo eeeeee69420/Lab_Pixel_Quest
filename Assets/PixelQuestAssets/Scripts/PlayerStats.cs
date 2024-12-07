@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System;
+using UnityEditor.U2D;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -9,12 +11,16 @@ public class PlayerStats : MonoBehaviour
     public Transform respawnPoint; // Keeps track of where the player we respawn at 
     public Transform Screen;
     public Transform DeathScreen;
+    public Transform FinishScreen;
+    public Transform DoorPoint;
+    public Sprite DoorMain;
 
     // Player stats 
     public float playerLife = 3;   // How much health the player currently has 
     public int currentCoins = 0;   // How many coins has the player collected 
     private float playerMaxHealth = 6   ; // What is the max health the player can have 
     private int maxCoins = 0; // What is the amount of coins in the level 
+    public Boolean finish = false;
 
     PQPlayerMovement playerMovement;
     PlayerJumping playerJumping;
@@ -104,6 +110,12 @@ public class PlayerStats : MonoBehaviour
             // Gets the name of the level we're currently in 
             DeathScreen.position = Vector2.MoveTowards(DeathScreen.position, Screen.position, uispeed * Time.deltaTime);                        // Reload that level 
         }
+        if (finish == true)
+        {
+            rigidbody2D.velocity = Vector2.zero;
+            FinishScreen.position = Vector2.MoveTowards(FinishScreen.position, Screen.position, uispeed * Time.deltaTime);
+            rigidbody2D.position = Vector2.MoveTowards(rigidbody2D.position, DoorPoint.position, uispeed * Time.deltaTime);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -168,10 +180,7 @@ public class PlayerStats : MonoBehaviour
             // Finish tag, dicates what happens after player touches a respawnpoint 
             case finishTag:
                 {
-                    // Gets the name of the next level from the end game object 
-                    string nextLevel = collision.gameObject.GetComponent<GameEnd>().nextLevel;
-                    // Loads us into that next level 
-                    SceneManager.LoadScene(nextLevel);
+                    finish = true;
                     break;
                 }
         }

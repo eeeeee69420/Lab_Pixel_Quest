@@ -29,7 +29,7 @@ public class PlayerJumping : MonoBehaviour
 
         // Checks if the player can jump
         // Checks if the player is click the space key, checks if the player is touching ground or water
-        if (Input.GetKeyDown(KeyCode.Space) && (groundCheck || waterCheck ) && playerStats.playerLife > 0)
+        if (Input.GetKeyDown(KeyCode.Space) && (groundCheck || waterCheck ) && playerStats.playerLife > 0 && playerStats.finish == false)
         {
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, JumpForce);
         }

@@ -36,7 +36,7 @@ public class PQPlayerMovement : MonoBehaviour
         }
 
         // Saves player input to the Rigidbody and makes the player move at the given speed.
-        if (playerStats.playerLife > 0)
+        if (playerStats.playerLife > 0 && playerStats.finish == false)
         {
             rigidbody2D.velocity = new Vector2(WalkSpeed * xVelocity, rigidbody2D.velocity.y);
         }
