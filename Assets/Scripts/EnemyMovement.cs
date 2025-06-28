@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
-public class EnemyController : MonoBehaviour
+public class EnemyMovement : MonoBehaviour
 {
     public float speed;
     public Rigidbody2D enemyBody;
@@ -13,6 +14,9 @@ public class EnemyController : MonoBehaviour
     public int playerTarget;
     public Vector2 direction;
     public Vector2 targetPosition;
+    public bool touchingPlayer;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +24,11 @@ public class EnemyController : MonoBehaviour
         enemyBody = GetComponent<Rigidbody2D>();
         enemySprite = GetComponentInChildren<SpriteRenderer>();
         enemyAnimator = GetComponent<EnemyAnimator>();
+        controller = GameObject.Find("GameController").GetComponent<GameController>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         float closestDistance = Mathf.Infinity;
         for (int i = 0; i < controller.Players.Count; i++)
@@ -41,13 +46,19 @@ public class EnemyController : MonoBehaviour
             enemySprite.flipX = true;
         else if (direction.x > 0)
             enemySprite.flipX = false;
-            enemyBody.MovePosition(enemyBody.position + speed * Time.deltaTime * direction);
+        enemyBody.MovePosition(enemyBody.position + speed * Time.fixedDeltaTime * direction);
+
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.name == "Player")
+            touchingPlayer = true;
+    }
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Player")
         {
-            enemyAnimator.PlayAnimation("Attack");
+            touchingPlayer = false;
         }
     }
 }

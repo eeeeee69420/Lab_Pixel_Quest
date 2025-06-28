@@ -5,12 +5,13 @@ using UnityEngine;
 public class EnemyAnimator : MonoBehaviour
 {
     public Animator animator;
-    public EnemyController enemyController;
+    public EnemyMovement enemyMovement;
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponentInChildren<Animator>();
-        enemyController = GetComponent<EnemyController>();
+        enemyMovement = GetComponent<EnemyMovement>();
     }
     // Update is called once per frame
     public void PlayAnimation(string Animation)
