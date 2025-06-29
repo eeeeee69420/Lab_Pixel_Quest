@@ -7,7 +7,8 @@ public class ProjectileController : MonoBehaviour
     public float speed;
     public Rigidbody2D projectileBody;
     public new Transform transform;
-    public Animator animator;  
+    public Animator animator;
+    public bool player;
     void Start()
     {
         projectileBody = GetComponent<Rigidbody2D>();
@@ -18,5 +19,9 @@ public class ProjectileController : MonoBehaviour
     void FixedUpdate()
     {
         projectileBody.position += (Vector2)(speed * Time.fixedDeltaTime * transform.up);
+    }
+    public void RotateProjectile()
+    {
+
     }
 }
